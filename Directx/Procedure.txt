@@ -1,0 +1,59 @@
+Step 1: Create a New Project in Visual Studio
+Open Visual Studio.
+Create a new project:
+Language: Select C#.
+Application Type: Choose Windows Forms Application.
+.NET Framework Version: Select .NET Framework 2.0.
+Name your project and choose a location.
+Note: If .NET Framework 2.0 is not installed, you might need to download and install it.
+
+
+Step 2: Configure the Build Platform
+After creating the project, go to Project Properties:
+Click on the Project tab in the menu, then click Properties.
+In the Build section:
+Set Platform Target to x86 (32-bit) to ensure compatibility with DirectX libraries.
+This ensures the program runs in 32-bit mode, which is required for the DirectX components.
+
+
+Step 3: Open Form1 Code
+In the Solution Explorer, find Form1.
+Right-click on Form1 and select View Code. This will open the code editor for Form1.cs.
+
+
+Step 4: Add DirectX References
+In the Solution Explorer, right-click on your project name and select Add Reference.
+In the reference window:
+Click on Browse and navigate to the following path:
+makefile
+Copy code
+C:\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0
+Select the following DLL files:
+Microsoft.DirectX.dll
+Microsoft.DirectX.Direct3D.dll
+Microsoft.DirectX.Direct3DX.dll
+Add these files to your project as references.
+
+
+Step 5: Attach the Paint Event Handler
+In Form1's Properties window, go to the Events section.
+Find the Paint event and double-click it to automatically generate the event handler Form1_Paint.
+This will create the necessary Paint event handler in the Form1.cs file.
+
+
+Step 6: Initialize Direct3D in the Code
+In Form1.cs, add the following code for setting up Direct3D:
+This code sets up the Direct3D device and handles the basic rendering in the Form1_Paint event. The screen will be cleared with a blue background.
+
+
+Step 7: Handle LoaderLock Exception
+When running the code, you might encounter a LoaderLock exception. To resolve this:
+Go to Debug > Windows > Exception Settings.
+Find Managed Debugging Assistants.
+Uncheck the LoaderLock option.
+This will prevent the LoaderLock exception from being thrown.
+
+
+Step 8: Run the Program
+Build and Run the project.
+You should see a blue window, indicating that the Direct3D device has been initialized and is rendering correctly.
